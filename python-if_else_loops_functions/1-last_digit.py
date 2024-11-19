@@ -2,9 +2,8 @@
 import random
 number = random.randint(-10000, 10000)
 
-num_str = repr(number)
-last_digit_str = num_str[-1]
-last_digit = int(last_digit_str)
+last_digit = int(repr(number)[-1])
+
 if number < 0:
     last_digit = -last_digit
 
