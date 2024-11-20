@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Module to draw a square - Step 4"""
+
+
 class Square:
     """Square class"""
 
