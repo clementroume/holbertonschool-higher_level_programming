@@ -33,6 +33,20 @@ class Square:
             print()
         else:
             for i in range(self._Square__size):
-                for j in range(self._Square__size):
-                    print("#", end="")
-                print()
+                print("#" * self._Square__size)
+
+
+my_square = Square(3)
+my_square.my_print()
+
+print("--")
+
+my_square.size = 10
+my_square.my_print()
+
+print("--")
+
+my_square.size = 0
+my_square.my_print()
+
+print("--")
