@@ -4,15 +4,8 @@
 
 def add_integer(a, b=98):
     """add integer function"""
-    if not (isinstance(a, int) or isinstance(a, float)):
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    elif not (isinstance(b, int) or isinstance(b, float)):
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    else:
-        return a + b
-
-
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    return int(a + b)
