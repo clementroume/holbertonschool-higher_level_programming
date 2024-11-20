@@ -1,22 +1,12 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""
-This module containt a single class named Square
-"""
+"""Module to draw a square - Step 3"""
 
 
 class Square:
-    """
-    This is the empty class named Square.
-    The empy block is identified using the pass statement.
-    The private instance atribute size is defined.
-    Size validation throught the two if conditions
-    Area calculation throught area(self) function
-    """
-
-    __size = 0
+    """Square class"""
 
     def __init__(self, size=0):
+        """initialization method"""
         self._Square__size = size
         if not type(size) is int:
             raise TypeError("size must be an integer")
@@ -24,4 +14,5 @@ class Square:
             raise ValueError("size must be >= 0")
 
     def area(self):
+        """area method"""
         return self._Square__size**2
