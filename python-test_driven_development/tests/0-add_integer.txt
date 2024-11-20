@@ -14,6 +14,14 @@
 >>> add_integer(57.3, -8)
 49
 
+>>> add_integer(1e1000, 90)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'), 90)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 TypeError: b must be an integer
