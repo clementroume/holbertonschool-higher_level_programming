@@ -7,13 +7,13 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """initialization method"""
-        self._Square__size = size
-        self._Square__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
         """size getter method"""
-        return self._Square__size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -22,37 +22,39 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self._Square__size = value
+        self.__size = value
 
     @property
     def position(self):
         """position getter method"""
-        return self._Square__position
+        return self.__position
 
     @position.setter
     def position(self, value):
         if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) != 2:
+        if len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif not isinstance(value[0], int) and isinstance(value[1], int):
+        if not all(isinstance(x, int) and x >= 0 for x in value):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] and value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self._Square__position = value
+        self.__position = value
 
     def area(self):
         """area method"""
-        return self._Square__size**2
+        return self.__size**2
 
     def my_print(self):
         """printing method"""
-        if self._Square__size == 0:
+        if self.size == 0:
             print()
         else:
-            a, b = self._Square__position
+            a, b = self.position
             for i in range(b):
                 print("")
-            for j in range(self._Square__size):
+            for j in range(self.size):
                 print(" " * a, end="")
-                print("#" * self._Square__size)
+                print("#" * self.size)
+
+
+my_square_3 = Square(3, (0, 1))
+my_square_3.my_print()
