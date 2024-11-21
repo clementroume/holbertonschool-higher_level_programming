@@ -3,11 +3,11 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 >>> text_indentation("Salut, tu: vas. bien? ^^")
-Salut, tu
+Salut, tu:
 <BLANKLINE>
-vas
+vas.
 <BLANKLINE>
-bien
+bien?
 <BLANKLINE>
 ^^
 
