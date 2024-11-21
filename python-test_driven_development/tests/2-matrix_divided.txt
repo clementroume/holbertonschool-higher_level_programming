@@ -32,3 +32,20 @@ TypeError: div must be a number
 >>> matrix_divided([[1, 2], [1, 2]], 0)
 Traceback (most recent call last):
 ZeroDivisionError: division by zero
+
+>>> matrix_divided([[1, 2], [1, 2]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+>>> matrix_divided([[1, 2], [1, float('inf')]], 2)
+[[0.5, 1.0], [0.5, inf]]
+
+>>> matrix_divided([[1, 2], [1, float('inf')]], float('inf'))
+[[0.0, 0.0], [0.0, nan]]
+
+>>> matrix_divided([[1, 2], [1, 2]])
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
