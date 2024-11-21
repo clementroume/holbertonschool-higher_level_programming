@@ -20,7 +20,7 @@ def matrix_divided(matrix, div):
     if len({len(rows) for rows in matrix}) != 1:
         raise TypeError("Each row of the matrix must have the same size")
     if not isinstance(div, (int, float)):
-        raise TypeError("div must be an number")
+        raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     return [[round(value / div, 2) for value in lists] for lists in matrix]
